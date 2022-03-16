@@ -12,3 +12,5 @@ spring:
     import: optional:file:local-environments.properties
 server:
   port: 9090
+  servlet:
+    context-path: /telemetry

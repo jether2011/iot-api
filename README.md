@@ -33,19 +33,7 @@ curl --location --request POST 'http://localhost:9090/telemetry/api/v1/measures'
 To retrieve stream of measures data: 
 
 ```shell
-curl --location --request GET 'http://localhost:9090/telemetry/api/v1/measures' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "deviceId": "123456",
-    "temperature": 13.0,
-    "airHumidity": 14.0
-}'
+curl --location --request GET 'http://localhost:9090/telemetry/api/v1/measures'
 
-curl --location --request GET 'http://localhost:9090/telemetry/api/v1/measures/123456/device' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "deviceId": "123456",
-    "temperature": 13.0,
-    "airHumidity": 14.0
-}'
+curl --location --request GET 'http://localhost:9090/telemetry/api/v1/measures/123456/device'
 ```

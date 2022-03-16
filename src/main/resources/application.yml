@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: iot-telemetry-service
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+  data:
+    mongodb:
+      uri: mongodb+srv://${mongo.username}:${mongo.password}@${mongo.database}.ympoh.mongodb.net/${mongo.database}?retryWrites=true&w=majority
+  config:
+    import: optional:file:local-environments.properties
+server:
+  port: 9090

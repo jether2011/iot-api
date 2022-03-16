@@ -1,1 +1,1 @@
-web: java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar --server.port=$PORT --metrics.jmx.enabled=false --spring.datasource.jmx-enabled=false --spring.jmx.enabled=false --management.security.enabled=false --endpoints.jmx.enabled=false
+web: java -XX:+UnlockExperimentalVMOptions -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar --server.port=$PORT --metrics.jmx.enabled=false --spring.datasource.jmx-enabled=false --spring.jmx.enabled=false --management.security.enabled=false --endpoints.jmx.enabled=false

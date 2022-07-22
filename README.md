@@ -24,9 +24,22 @@ The following cURL command create a measure data event on telemetry database:
 curl --location --request POST 'http://localhost:9090/telemetry/api/v1/measures' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "deviceId": "123456",
-    "temperature": 13.0,
-    "airHumidity": 14.0
+    "device": {
+        "deviceId": "123456STRE",
+        "latitude": 43.123456,
+        "longitude": 23.123456
+    },
+    "measures": [
+        {
+            "sensor": "TEMPERATURE",
+            "measure": 13.54
+        },
+        {
+            "sensor": "HUMIDITY",
+            "measure": 58.54
+        }
+    ],
+    "createdAt": "2022-07-21 22:17:35.999"
 }'
 ```
 
@@ -35,5 +48,5 @@ To retrieve stream of measures data:
 ```shell
 curl --location --request GET 'http://localhost:9090/telemetry/api/v1/measures'
 
-curl --location --request GET 'http://localhost:9090/telemetry/api/v1/measures/123456/device'
+curl --location --request GET 'http://localhost:9090/telemetry/api/v1/measures/:device_id/device'
 ```
